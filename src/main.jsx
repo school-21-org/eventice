@@ -9,6 +9,7 @@ import {
 import App from './App'
 import About from "./About"
 import './index.css'
+import 'antd/dist/antd.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

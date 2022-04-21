@@ -1,27 +1,27 @@
+import { Calendar } from 'antd'
 import { useState } from 'react'
-import logo from './logo.svg'
 import { Link } from "react-router-dom"
+import EventCard from './EventCard'
+import Header from './HeaderBar'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="bg-slate-600 text-white h-screen">
-      <header className="w-1/2">
-        <img src={logo} alt="logo" />
-        <p>Hello Vite + React + React Router + Tailwind!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p className='text-3xl font-thin'>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <Link to="/about">Click me about</Link>
-        </p>
-      </header>
+    <div className="h-screen max-w-7xl mx-auto flex flex-col">
+      <Header />
+      <main className='py-8 flex flex-col xl:flex-row gap-4'>
+        <div className='xl:w-2/5'>
+          <Calendar></Calendar>
+        </div>
+        <EventCard />
+      </main>
+      <p>
+        <Link to="/about">Click me about</Link>
+      </p>
+      <div>
+        <p className='mb-0'>School news</p>
+      </div>
     </div>
   )
 }
