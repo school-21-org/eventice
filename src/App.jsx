@@ -1,8 +1,8 @@
 import { Calendar } from 'antd'
 import { useState } from 'react'
 import { Link } from "react-router-dom"
-import EventCard from './EventCard'
-import Header from './HeaderBar'
+import EventCard from './ui/EventCard'
+import Header from './ui/HeaderBar'
 
 function App() {
   const [count, setCount] = useState(0)
