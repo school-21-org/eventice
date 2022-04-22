@@ -1,15 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import {
   BrowserRouter,
   Routes,
   Route,
-} from "react-router-dom";
+} from 'react-router-dom';
 
-import App from './App'
-import About from "./pages/About"
-import './index.css'
-import 'antd/dist/antd.css'
+import App from './App';
+import About from './pages/About';
+import './index.css';
+import 'antd/dist/antd.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -19,5 +19,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>
-)
+  </React.StrictMode>,
+);

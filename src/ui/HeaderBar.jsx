@@ -1,12 +1,13 @@
-import { Avatar } from "antd";
+import React from 'react';
+import { Avatar } from 'antd';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
-    return (
-        <header className="bg-violet-400 text-white rounded-b-lg select-none grid grid-cols-12 py-2 px-4">
-            <p className="mb-0 col-span-5">Gallery</p>
-            <p className="mb-0 col-span-2 font-bold text-xl">Eventice</p>
-            <p className="mb-0 col-span-2">Holygraph</p>
-            <Avatar></Avatar>
-        </header>
-    )
+  return (
+    <header className="font-comfortaa bg-violet-900 text-white rounded-b-2xl select-none flex flex-row justify-between py-4 px-6">
+      <Link className="pt-1 text-white transition ease-in-out duration-200 hover:scale-125 hover:text-blue-200" to="/about">Gallery</Link>
+      <Link className="tracking-wide font-bold pt-0.5 text-xl text-white transition ease-in-out duration-200 hover:scale-125 hover:text-blue-200" to="/about">Eventice</Link>
+      <Avatar />
+    </header>
+  );
 }
