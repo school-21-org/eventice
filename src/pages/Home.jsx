@@ -18,7 +18,6 @@ const serverData = [
 ];
 
 const showEventCard = (value, setEvent) => {
-  console.log('value, setEvent', value, setEvent);
   const dataFromServer = serverData;
   const DateValue = value.format('yyyy-MM-DD');
   const listData = dataFromServer.filter((item) => item.date === DateValue);
