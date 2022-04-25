@@ -62,7 +62,7 @@ export const Home = () => {
   const toNext = () => {setSelectedEventIndex(prevIndex => (prevIndex < selectedEvents.length - 1) ? prevIndex + 1 : prevIndex)};
 
   return <>
-    <Calendar onSelect={handleCalendarSelection} dateCellRender={getEventData} className="xl:w-3/5 font-bellota" />
+    <Calendar className="xl:w-3/5 font-bellota p-4 border border-violet-900 rounded-xl" onSelect={handleCalendarSelection} dateCellRender={getEventData} />
     <EventCard name={selectedEvents[selectedEventIndex]?.name}
                date={selectedEvents[selectedEventIndex]?.date}
                time={selectedEvents[selectedEventIndex]?.time}

@@ -3,10 +3,10 @@ import { Col, Row } from 'antd';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 
 export const EventCard = ({ name, time, date, description, selected, count, toPrev, toNext }) => (
-  <div className="font-bellota select-none border border-black rounded-xl xl:w-2/5 py-2 px-4">
+  <div className="font-bellota select-none border border-violet-900 rounded-xl xl:w-2/5 py-2 px-4">
     { !name && <p className="mb-0 pt-5 text-center text-2xl">Выберите событие на календаре</p> }
     { name && <div className="relative h-full">
-        <h2 className="text-center border-b border-black font-bold text-3xl">{name}</h2>
+        <h2 className="text-center border-b border-violet-900 font-bold text-violet-900 text-3xl">{name}</h2>
         <p className="mb-0 text-right text-2xl">{time}</p>
         <p className="mb-0 text-right text-2xl">{date}</p>
         <p className="mb-0 text-justify pt-12 px-8">{description}</p>
