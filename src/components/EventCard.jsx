@@ -10,7 +10,7 @@ export const EventCard = ({ name, time, date, description, selected, count, toPr
         <p className="mb-0 text-right text-2xl">{time}</p>
         <p className="mb-0 text-right text-2xl">{date}</p>
         <p className="mb-0 text-justify pt-12 px-8">{description}</p>
-        <Row className="absolute bottom-0 w-full" justify="space-between">
+        <Row className="absolute bottom-4 pt-5 w-full" justify="space-between">
           <Col><LeftOutlined onClick={toPrev} /></Col>
           <Col span={20} className="text-center">{selected + 1}/{count}</Col>
           <Col><RightOutlined onClick={toNext} /></Col>
