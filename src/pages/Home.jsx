@@ -10,6 +10,12 @@ const serverData = [
     description: 'LORA IPSA',
   },
   {
+    date: '2022-04-11',
+    time: '4:21',
+    name: 'Aifam',
+    description: 'IPSA LORA',
+  },
+  {
     date: '2022-05-14',
     time: '4:20',
     name: 'Mafia',
@@ -35,8 +41,8 @@ const getEventData = (value) => {
 
   return (
     <ul>
-      {listData.map((item) => (
-        <li key={item.date}>
+      {listData.map((item, index) => (
+        <li key={item.date + index}>
           <p className="mb-0">{item.name}</p>
         </li>
       ))}
@@ -46,9 +52,25 @@ const getEventData = (value) => {
 
 export const Home = () => {
   const [selectedEvents, setSelectedEvents] = useState([]);
+  const [selectedEventIndex, setSelectedEventIndex] = useState(0);
+
+  const handleCalendarSelection = (e) => {
+    showEventCard(e, setSelectedEvents);
+    setSelectedEventIndex(0);
+  }
+  const toPrev = () => {setSelectedEventIndex(prevIndex => (prevIndex > 0) ? prevIndex - 1 : 0)};
+  const toNext = () => {setSelectedEventIndex(prevIndex => (prevIndex < selectedEvents.length - 1) ? prevIndex + 1 : prevIndex)};
 
   return <>
-    <Calendar onSelect={(e) => showEventCard(e, setSelectedEvents)} dateCellRender={getEventData} className="xl:w-3/5 font-bellota" />
-    <EventCard name={selectedEvents[0]?.name} date={selectedEvents[0]?.date} time={selectedEvents[0]?.time} description={selectedEvents[0]?.description} />
+    <Calendar onSelect={handleCalendarSelection} dateCellRender={getEventData} className="xl:w-3/5 font-bellota" />
+    <EventCard name={selectedEvents[selectedEventIndex]?.name}
+               date={selectedEvents[selectedEventIndex]?.date}
+               time={selectedEvents[selectedEventIndex]?.time}
+               description={selectedEvents[selectedEventIndex]?.description}
+               selected={selectedEventIndex}
+               count={selectedEvents.length}
+               toPrev={toPrev}
+               toNext={toNext}
+    />
   </>
 };
