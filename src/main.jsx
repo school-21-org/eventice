@@ -10,6 +10,7 @@ import App from './App';
 import About from './pages/About';
 import './index.css';
 import 'antd/dist/antd.css';
+import GalleryPage from './ui/GalleryPage';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -17,6 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/about" element={<About />} />
+        <Route path="/gallery" element={<GalleryPage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
