@@ -1,25 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { AppRoutes } from './components/AppRoutes';
+import { ConfigProvider } from 'antd';
+import ruRU from 'antd/lib/locale/ru_RU';
 
-import App from './App';
-import About from './pages/About';
-import './index.css';
 import 'antd/dist/antd.css';
-import GalleryPage from './ui/GalleryPage';
+import 'moment/dist/locale/ru';
+import moment from 'moment';
+moment.locale('ru');
+import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/gallery" element={<GalleryPage />} />
-      </Routes>
+      <ConfigProvider locale={ruRU}>
+        <AppRoutes />
+      </ConfigProvider>
     </BrowserRouter>
   </React.StrictMode>,
 );
